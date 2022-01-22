@@ -1,0 +1,65 @@
+1. To find max difference between two numbers in an array without changing the order such that 0 <= index1 < index2 <= n --
+
+	KADANE's ALGO ---
+		sum the difference bewtween to consecutive numbers, and continously store the max sum in a var.
+		The var in the end is the max difference.
+		ALGO --
+			maxCur=0, maxSoFar=0;
+			for(int i=1; i<n; i++)
+				maxCur += a[i]-a[i-1]
+				maxCur = max(0, maxCur)
+				maxSoFar = max(maxSoFar, maxCur)
+			return maxSofar 
+
+2. Split sentence ---
+	ALGO --
+		string str
+		istringstream ss(str)
+		string word
+		while(ss>>word)
+			print word
+
+3. lower and upper bound in sorted vector ---
+	ALGO - 
+		vector<int>::iterator low, up;
+		low = lower_bound(v.begin(), v.end(), target);
+		up = upper_bound(v.begin(), v.end(), target);
+		print low-v.begin() and up-v.begin();
+	
+		1 2 2 4 4 5 6 6 6 7
+			    |     |
+			  low(6)  up(9)
+		Time complexity - O(logn) 
+
+4. When asked to find smallest positive integer missing from an array ---
+	ALGO --
+		swap the integer greater than 0 and less than equal to arr.size() in the array to its correct position by swap(arr[i], arr[arr[i]-1]);
+		example - arr[i] = 5, therefore swap 5 to arr[4]
+		Now loop through arr and check if a[i]=i+1 or not.
+		return i+1 if a[i]!=i+1;
+		for reference - leetcode (ques. 41)
+
+5. Bit manipulation - power of 2 ---
+	CODE --
+		x && (!(x & (x - 1))) where x is the given number
+
+6. How to make a substring from a string --
+	ALGO -
+		string s
+		s.substr(position(0-index), length of substring);
+	Example -
+		s = geeks
+		s.substr(1, 3)
+		result - eek
+
+7. How to find if a sring contains repeating substrings --
+	ALGO ---
+		if a string has repeating substring, that means if we double to given string, there would still be the original string contained in it.
+		if we remove the last and first char of the resultant string, the orginal string would still be there if it has repeating substring otherwise not.
+		Therefore,
+			string s;
+			ss = s+s; //doubling the string
+			subs = ss.substr(1, ss.size()-2); //removing first and last char.
+			if subs.find(s) != end return true;
+			else return false;
+	For reference - leetcode (ques. 459)
