@@ -18,3 +18,14 @@ GIT COMMANDS (personal use)--
 	-finally, commit 		-- git push -u origin main
 
 (NOTE: you make any changes in your local repo you will have to follow the commands of pt 4 again, the changes will not be automatically made)
+
+5. Create a new branch in your remote repo using cmd - 
+	- git checkout -b temp
+	here - checkout -- changing the branch from main to new branch
+		 - -b       -- create a new branch
+		 - temp     -- name of the new branch
+
+6. Changes made to the temp branch wont reflect to the main branch branch, unless you make it do so, using cmd -
+	- first go to you main branch                            -- "git checkout main" 
+	( here -b is not added because we are not creating a new branch, we are going to an exsiting one.)
+	- merge the content of temp branch in main branch        -- "git merge temp"
