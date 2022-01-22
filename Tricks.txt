@@ -1,3 +1,5 @@
+__ Learning to use Git and Github __
+
 1. To find max difference between two numbers in an array without changing the order such that 0 <= index1 < index2 <= n --
 
 	KADANE's ALGO ---
