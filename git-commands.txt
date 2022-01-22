@@ -29,3 +29,11 @@ GIT COMMANDS (personal use)--
 	- first go to you main branch                            -- "git checkout main" 
 	( here -b is not added because we are not creating a new branch, we are going to an exsiting one.)
 	- merge the content of temp branch in main branch        -- "git merge temp"
+
+7. To pull a remote repo to your local device -
+	- 1. get to the parent folder of your local repo using cmd "cd .."
+	- 2. Open github, click the green colored "CODE" btn, and copy the https url.
+	- 3. write the following command to download the remote repo and make changes to it in your local device, although these changes will not be auotmatically be represented in your remote repo. -
+		-- "git clone YOUR_HTTPS_URL"
+
+THIS IS IT, A BASIC INTRO TO THE GIT AND GITHUB (from freecodecamp).
