@@ -12,10 +12,11 @@ GIT COMMANDS (personal use)--
 (NOTE: to make this command work you first have to create a repo in your github account where you want to save your commits)
 
 4. Add a file to your local repo. Now if tou want to add this file to your remote repo, i.e. github account, following the commands --
-	-to modify the file 	-- "git add ." (to add all files in your local repo) or
-							-- "git add filename.extension" (to add a specific file)
-	-to stage you file/s 	-- git commit -m "message to be displayed"
-	-finally, commit 		-- git push -u origin main
+	-to create master branch   -- "git branch -M main"
+	-to modify the file 	   -- "git add ." (to add all files in your local repo) or
+				   -- "git add filename.extension" (to add a specific file)
+	-to stage you file/s 	   -- "git commit -m "message to be displayed"
+	-finally, commit 	   -- "git push -u origin main"
 
 (NOTE: you make any changes in your local repo you will have to follow the commands of pt 4 again, the changes will not be automatically made)
 
