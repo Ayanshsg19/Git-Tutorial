@@ -12,29 +12,45 @@ GIT COMMANDS (personal use)--
 (NOTE: to make this command work you first have to create a repo in your github account where you want to save your commits)
 
 4. Add a file to your local repo. Now if tou want to add this file to your remote repo, i.e. github account, following the commands --
-	-to create master branch   -- "git branch -M main"
-	-to modify the file 	   -- "git add ." (to add all files in your local repo) or
-				   -- "git add filename.extension" (to add a specific file)
-	-to stage you file/s 	   -- "git commit -m "message to be displayed"
-	-finally, commit 	   -- "git push -u origin main"
+	-to modify the file 	-- "git add ." (to add all files in your local repo) or
+							-- "git add filename.extension" (to add a specific file)
+	-to stage you file/s 	-- git commit -m "message to be displayed"
+	-finally, push 		    -- git push -u origin main
 
-(NOTE: you make any changes in your local repo you will have to follow the commands of pt 4 again, the changes will not be automatically made)
+(NOTE: 
+	1. you make any changes in your local repo you will have to follow the commands of pt 4 again, the changes will not be automatically made
+	2. the "-u" in "git push -u origin main" stands for upstream, and is used only one time when we write the push command in a specific project, the next time we can just write "git push" and the changes will be made to the correct branch, no need to write "git push -u origin main" everytime.
+)
 
 5. Create a new branch in your remote repo using cmd - 
-	- git checkout -b temp
+	- git checkout -b/-d temp
 	here - checkout -- changing the branch from main to new branch
 		 - -b       -- create a new branch
+		 - -d       -- delete an existing branch
 		 - temp     -- name of the new branch
 
 6. Changes made to the temp branch wont reflect to the main branch branch, unless you make it do so, using cmd -
 	- first go to you main branch                            -- "git checkout main" 
 	( here -b is not added because we are not creating a new branch, we are going to an exsiting one.)
-	- merge the content of temp branch in main branch        -- "git merge temp"
+	- merge the content of temp branch in main branch        -- "git merge temp" (if we are currently in main branch)
+															 -- "git merge main" (if we are currently in temp branch)
 
 7. To pull a remote repo to your local device -
 	- 1. get to the parent folder of your local repo using cmd "cd .."
 	- 2. Open github, click the green colored "CODE" btn, and copy the https url.
 	- 3. write the following command to download the remote repo and make changes to it in your local device, although these changes will not be auotmatically be represented in your remote repo. -
 		-- "git clone YOUR_HTTPS_URL"
+
+8. "git diff" -- this command is used to tell what and where the changes were made in a file in the current branch.
+
+9. "git diff branch_to_check" -- this command is used when we want to check the difference in files between two different branches.
+
+10. "git commit -a" -- unlike "git commit -m "some message" " is used when you cloned a repo to your local machine or you are just modifying a file and not creating a new one.
+
+11. "git reset file_name" -- used to un-add a added file using "git add", the commands is used when you have added the file buthave not commited and pushed it yet.
+
+12. "git log" -- it is used to see all the change log you have done to your repo so far in reverse order.
+
+(NOTE : when you use the "git log" command you would see an id associated with every change, and if you want to go back to the that specific change or undo every change you made after that change use "git reset change_id" to "unstage" back to the said change, here everything would still be there in your local repo, but in unstage or un-addded form, if you want to remove those changes even from your local repo use command "git reset --hard change_id".)
 
 THIS IS IT, A BASIC INTRO TO THE GIT AND GITHUB (from freecodecamp).
